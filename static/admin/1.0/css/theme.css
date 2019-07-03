@@ -1,0 +1,93 @@
+.container-default{
+min-height:500px;
+}
+
+.sidebar .dropdown{
+height:62px;
+}
+
+ul.dropdown-menu.ddn-left {
+    margin-left: -106px;
+}
+
+.col-lg-3.tiles{
+	min-height:100px;
+	color:#fff !important;
+	text-align:Center;
+	width:24%;
+	transition:0.5s;
+}
+
+
+.col-lg-3.tiles h1{
+	margin:10px 5px 5px 5px;
+}
+.col-lg-3.tiles a,.col-lg-3.tiles i,.col-lg-3.tiles h3{
+	color:#fff;
+}
+
+.col-lg-3.tiles:hover{
+	background:#e74c3c;
+}
+
+.cheque_image{
+max-width:400px;
+max-height:150px;
+}
+
+.search_transaction{
+	width:50%;
+	margin:50px auto;
+	padding:10px;
+}
+
+
+/*
+customise bootstrap alert 	
+*/
+.alert-danger{
+	color: #fff !important;
+    background-color: #ef4836;
+    border-color: #ebccd1;
+    border-radius: 0px;
+}
+
+.alert-success{
+	color: #fff !important;
+    background-color: #26a65b;
+    border-color: #d6e9c6;
+    border-radius: 0px;
+}
+
+.alert-warning{
+	color: #fff !important;
+    background-color: #f39c12;
+    border-color: #faebcc;
+    border-radius: 0px;
+}
+
+.alert-info{
+	color: #fff !important;
+    background-color: #399bff;
+    border-color: #bce8f1;
+    border-radius: 0px;
+}
+
+/*
+.alert{
+	margin-left: -46px;
+    margin-right: -46px;
+    text-indent: 15px;
+}
+*/
+
+.card {
+    background-color: #fff !important;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.youtube_iframe{
+    border:0px;
+}

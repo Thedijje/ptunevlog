@@ -1,0 +1,25 @@
+a {
+    color: #9a0007;
+}
+.applogo {
+    background: #9a0007;
+    color: #fff;
+}
+
+#top {
+    background: #d32f2f;
+    color: #fff;
+}
+
+.sidebar .dropdown {
+    background: #d32f2f;
+}
+
+.footer {
+    border-top: 1px solid #e2e2e2;
+    color: #ff6659;
+    background: #9a0007;
+}
+.footer a {
+    color: #fff;
+}
