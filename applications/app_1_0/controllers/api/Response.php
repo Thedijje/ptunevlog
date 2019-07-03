@@ -15,9 +15,7 @@ class Response extends Api_Controller {
 
 		parent::__construct();
 		
-		$this->load->language(strtolower(__CLASS__));
-		$this->_lang   		=   $this->lang->line(strtolower(__CLASS__));
-
+		
 		$this->_error 		=   "Some error occured, please try again later";
 		$this->_message 	=   "Request Completed Successfully";
 		$this->_data 		=   array();

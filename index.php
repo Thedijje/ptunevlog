@@ -20,7 +20,7 @@ switch($server){
 	*	Local system
 	*/
 		define('DB_GROUP','DB_LOCAL');
-		define('BASE_URL','http://localhost/ci/');
+		define('BASE_URL','http://localhost/:8000/ptunevlog');
 		define('APP_V','1.0');
 		define('ENV','development');
 		$app_dir = 'applications/app_1_0/';
