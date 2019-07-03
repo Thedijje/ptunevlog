@@ -14,7 +14,6 @@ class Login extends REST_controller {
 	function __construct(){
 
 		parent::__construct();
-		
 
     }
 
@@ -26,16 +25,48 @@ class Login extends REST_controller {
         if(!$data){
             
             $message    =   array(
-                "message"   =>  "Invalid request/missing parameters",
-                "status"    =>  "error",
+                "error_msg"   =>  "Invalid request/missing parameters",
+                "success"    =>  false,
                 "data"      =>  array()
             );
 
             $this->response($message);
         }
 
-        
+        $email      =   $data['email'];
+        $password   =   md5($data['password']);
 
+        $check_user =   $this->lib->get_row_array('users', array('email'=>$email, 'password'=>$password));
+
+        if(!$check_user){
+
+            $message    =   array(
+                "error_msg"     =>  "Invalid Email/password",
+                "success"       =>  false,
+
+            );
+
+            $this->response($message);
+        }
+
+        $token      =   $this->login->create_jwt($check_user->id);
+
+        if(!$token){
+            $message    =   array(
+                "error_msg"     =>  "Unable to generate token at the moment, please try again soon",
+                "success"       =>  false,
+            );
+    
+            $this->response($message);    
+        }
+
+        $message    =   array(
+            "error_msg"     =>  "",
+            "success"       =>  true,
+            "token"         =>  $token
+        );
+
+        $this->response($message);
         
     }
 

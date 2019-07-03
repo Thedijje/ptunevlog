@@ -15,8 +15,8 @@
 function jwt_config(){
     $param  =   array(
         'key'   =>  array(
-            'jwt_secrate_pre'   =>  YOUR_PRE_KEY,
-            'jwt_secrate_post'  =>  YOUR_POST_KEY
+            'jwt_secrate_pre'   =>  '987f98a8fs97f67q',
+            'jwt_secrate_post'  =>  '8129e7987a89f7s9a87dfs987f2878928798'
         ),
         'version' =>  1.0       
     );
