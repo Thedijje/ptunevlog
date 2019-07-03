@@ -15,10 +15,6 @@ class Response extends Api_Controller {
 
 		parent::__construct();
 		
-		
-		$this->_error 		=   "Some error occured, please try again later";
-		$this->_message 	=   "Request Completed Successfully";
-		$this->_data 		=   array();
 
 	}
 

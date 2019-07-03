@@ -40,7 +40,7 @@ class Api_Controller extends REST_Controller {
 	 * ### default: 200
 	 * @var integer
 	 */
-	private $_http_ok = REST_Controller::HTTP_OK;
+	public $_http_ok = REST_Controller::HTTP_OK;
 
 
 	/**
@@ -49,14 +49,18 @@ class Api_Controller extends REST_Controller {
 	 * @var integer
      * 
 	 */
-	private $_http_error = REST_Controller::HTTP_OK;
+	public $_http_error = REST_Controller::HTTP_OK;
 
 
 	/**
 	 * Constructor to initialise all values
 	 */
 	function __construct(){
-        parent::__construct();
+		parent::__construct();
+		
+		$this->_error 		=   "Some error occured, please try again later";
+		$this->_message 	=   "Request Completed Successfully";
+		$this->_data 		=   array();
         
     }
 
@@ -90,7 +94,7 @@ class Api_Controller extends REST_Controller {
      * @var $this->_error for error message
      * @var $this->_data for data to be sent in array/object format
 	 *  */
-	private function _error_occured(){
+	public function _error_occured(){
         $this->_data     = array_merge($this->_data,array('message'=>$this->_error));
 
 		$response_data		=	array(
