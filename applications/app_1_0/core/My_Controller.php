@@ -3,67 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require FCPATH . 'vendor/autoload.php';
 
 
-class Web_Controller extends CI_Controller {
-
-    
-	function __construct(){
-        parent::__construct();
-		$this->_settings	=	$this->lib->config_list();
-	}
-	
-	/**
-	 * Function to render for the from website
-	 */
-    protected function _render($view,   $data = array(),	$render=FALSE){
-		
-		$data['config'] 	=   $this->_settings;
-        
-        if($render){
-            return $this->load->view($view,$data);
-		}
-		
-		
-        $this->load->view('front/includes/header',$data);
-		$this->load->view($view,$data);
-		$this->load->view('front/includes/footer',$data);
-
-	}
-	
-	/**
-	 * Function to render admin panel if any
-	 */
-    protected function _render_admin($view,   $data = array(),	$render=FALSE){
-
-		$data['config'] 	=   $this->_settings;
-        
-        if($render){
-            return $this->load->view($view,$data);
-		}
-		
-        $this->load->view('admin/includes/header',$data);
-		$this->load->view($view,$data);
-		$this->load->view('admin/includes/footer',$data);
-
-	}
-	
-	/**
-	 * Function to render user panel if any
-	 */
-    protected function _render_user($view,   $data = array(),	$render=FALSE){
-
-		$data['config'] 	=   $this->_settings;
-        
-        if($render){
-            return $this->load->view($view,$data);
-		}
-		
-        $this->load->view('user/includes/header',$data);
-		$this->load->view($view,$data);
-		$this->load->view('user/includes/footer',$data);
-	}
-
-}
-
 class Api_Controller extends REST_Controller {
 
 	
