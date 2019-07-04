@@ -15,12 +15,22 @@ class Videos extends REST_controller {
 
 		parent::__construct();
         $this->login->refresh_auth();
+        $this->load->model(array('video_model'=>'videos'));
     }
 
 
     public function index_get()
     {
-        die('hello');
+        //$param  =   $this->db->get();
+
+        dd($this->videos->by_topic('1,3'));
+        $videos =   $this->video->list();
+
+        $message    =   array(
+            "error_msg"     =>  "",
+            "success"       =>  true,
+            "data"         =>  $videos
+        );
     }
 
 }
