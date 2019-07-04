@@ -36,14 +36,22 @@ class Login extends Api_Controller {
 
         $check_user =   $this->lib->get_row_array('users', array('email'=>$email, 'password'=>$password));
 
+
+
+
         if(!$check_user){
 
             $this->_error    =   "Invalid Email/password";
             $this->_error_occured();
         }
 
+
+
+
         $token      =   $this->login->create_jwt($check_user->id);
 
+
+        
         if(!$token){
                
             $this->_error    =   "Unable to generate token at the moment, please try again soon";

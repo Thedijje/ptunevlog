@@ -21,7 +21,8 @@ class Videos extends Api_Controller {
 
     public function index_get()
     {
-        
+        $videos     =   $this->videos->list();
+        $this->_data    =   $videos ?? new stdClass;
         $this->_bye();
     }
 

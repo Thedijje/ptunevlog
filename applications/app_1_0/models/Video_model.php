@@ -11,18 +11,16 @@ class Video_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('videos video');
 
-        if($filter['lang'] AND $filter['lang']!=''){
+        if(isset($filter['lang']) AND $filter['lang']!=''){
             $this->db->where('video.lang', $filter['lang']);
         }
 
-        if($filter['keyword'] AND $filter['keyword']!=''){
+        if(isset($filter['keyword']) AND $filter['keyword']!=''){
             $this->db->or_like('video.description', $filter['keyword']);
         }
 
-        if($filter['keyword'] AND $filter['keyword']!=''){
-            $this->db->or_like('video.description', $filter['keyword']);
-        }
-
+        $query  =   $this->db->get();
+        return $query->result();
     }
 
     public function by_topic($topics='')
