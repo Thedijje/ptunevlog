@@ -9,31 +9,31 @@ class Api_Controller extends REST_Controller {
 	/**
 	 * ### holds the 'login' key from 'login_lang'
 	 */
-	private $_lang;
+	protected $_lang;
 	
 	/**
 	 * #### default: Some error occured, please try again later
 	 * @var string
 	 */
-	private $_error;
+	protected $_error;
 
 	/**
 	 * #### default: Request Completed Successfully
 	 * @var string
 	 */
-	private $_message;
+	protected $_message;
 
 	/**
 	 * #### blank array to store response data
 	 * @var mixed
 	 */
-	private $_data;
+	protected $_data;
 
 	/**
 	 * ### set value as 'logout' to logout any user in a case
 	 * @var string
 	 */
-	private $_logout = "";
+	protected $_logout = "";
 
 	/**
      * To store return response code when error occurs
@@ -72,15 +72,14 @@ class Api_Controller extends REST_Controller {
      * @var $this->_message for api message
      * @var $this->_data for data to be sent in array/object format
 	 *  */	
-	private function _bye(){
+	protected function _bye(){
 		//----------------------------DONT CHANGE ANYTHING BELOW --------------------
 		//SUCCESS RETURNS FOR API
 		$response_data		=	array(
-			'language'	=>	$this->_lang,
+			
 			'message'	=>	$this->_message,
 			'data'		=>	$this->_data,
-			'response'	=>	"",
-			'status'	=>	'success',
+			'success'	=>	true,
 			'time'		=>	time()
 		);
 		$this->response($response_data, $this->_http_ok);
@@ -94,15 +93,14 @@ class Api_Controller extends REST_Controller {
      * @var $this->_error for error message
      * @var $this->_data for data to be sent in array/object format
 	 *  */
-	public function _error_occured(){
+	protected function _error_occured(){
         $this->_data     = array_merge($this->_data,array('message'=>$this->_error));
 
 		$response_data		=	array(
-			'language'	=>	$this->_lang,
-			'message'	=>	$this->_error,
+
+			'error_message'	=>	$this->_error,
 			'data'		=>	$this->_data,
-			'response'	=>	"",
-			'status'	=>	"error",
+			'success'	=>	false,
 			'time'		=>	time()
 		);
 		$this->response($response_data, $this->_http_error);

@@ -25,6 +25,17 @@ switch($server){
 		$app_dir = 'applications/app_1_0/';
 	break;
 
+	case '192.168.1.129':
+	/*
+	*	Local system
+	*/
+		define('DB_GROUP','DB_UBUNTU');
+		define('BASE_URL','http://192.168.1.129/ptunevlog/');
+		define('APP_V','1.0');
+		define('ENV','development');
+		$app_dir = 'applications/app_1_0/';
+	break;
+
 	case 'http://example.com/':
 		define('DB_GROUP','DB_PRODUCTION');
 		define('BASE_URL','http://example.com/');

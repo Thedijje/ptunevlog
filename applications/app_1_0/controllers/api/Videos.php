@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //require APPPATH . 'libraries/REST_Controller.php';
 // require APPPATH . 'libraries/Format.php';
 
-class Videos extends REST_controller {
+class Videos extends Api_Controller {
 
     
 
@@ -20,7 +20,8 @@ class Videos extends REST_controller {
 
     public function index_get()
     {
-        die('hello');
+        
+        $this->_bye();
     }
 
 }
