@@ -9,7 +9,7 @@ class Helper_model extends CI_Model {
 		$is_cli     =    $this->input->is_cli_request();
         if(!$is_cli){
             $msg =    "Somebody from IP ".$_SERVER['REMOTE_ADDR']." Tried to open http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-            $this->notification->slack_notify($msg);
+            //$this->notification->slack_notify($msg);
             not_found();
             exit();
         }

@@ -15,6 +15,7 @@ class Videos extends Api_Controller {
 
 		parent::__construct();
         $this->login->refresh_auth();
+        $this->load->model(array('video_model'=>'videos'));
     }
 
 
