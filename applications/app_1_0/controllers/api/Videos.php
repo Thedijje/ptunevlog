@@ -21,9 +21,29 @@ class Videos extends Api_Controller {
 
     public function index_get()
     {
-        $videos     =   $this->videos->list();
+        $query          =   $this->input->get();
+        
+        $videos         =   $this->videos->list($query);
         $this->_data    =   $videos ?? new stdClass;
         $this->_bye();
+    }
+
+    public function detail_get()
+    {
+        $video_id   =   $this->input->get('id');
+
+        if(!$video_id){
+
+            $this->_error   =   "Empty video id";
+            $this->_error_occured();
+
+        }
+
+        $videos         =   $this->videos->detail($video_id);
+        $this->_data    =   $videos;
+        $this->_bye();
+
+
     }
 
 }
